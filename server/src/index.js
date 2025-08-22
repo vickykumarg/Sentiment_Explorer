@@ -25,6 +25,10 @@ app.use("/api", exerciseRoutes);
 app.use("/api", analyzeRoutes);
 app.use("/api", scoreRoutes);
 
+app.get("/",(req,res)=>{
+  res.send("It's Working");
+})
+
 // Boot
 const start = async () => {
   await connectDB(process.env.MONGO_URI);
