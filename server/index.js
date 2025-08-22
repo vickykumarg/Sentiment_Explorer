@@ -2,10 +2,10 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
-import { connectDB } from "./config/db.js";
-import exerciseRoutes from "./routes/exercise.js";
-import analyzeRoutes from "./routes/analyze.js";
-import scoreRoutes from "./routes/score.js";
+import { connectDB } from "./src/config/db.js";
+import exerciseRoutes from "./src/routes/exercise.js";
+import analyzeRoutes from "./src/routes/analyze.js";
+import scoreRoutes from "./src/routes/score.js";
 
 dotenv.config();
 
