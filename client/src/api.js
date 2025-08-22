@@ -6,9 +6,11 @@
 
 import axios from "axios";
 
-//  "https://sentiment-explorer-khaki.vercel.app/api";
 
-const API = "http://localhost:5000/api";
+
+// "http://localhost:5000/api"
+
+const API ="https://sentiment-explorer-chi.vercel.app/api"
 
 export async function analyze(text) {
   const res = await axios.post(`${API}/analyze`, { text });
