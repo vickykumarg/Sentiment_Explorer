@@ -1,14 +1,4 @@
-// import { Router } from "express";
-// import { analyzeSentiment, getSentences, saveScore, getLeaderboard } from "../controllers/exerciseController.js";
 
-// const router = Router();
-
-// router.post("/sentiment/analyze", analyzeSentiment);
-// router.get("/sentences", getSentences);
-// router.post("/score", saveScore);
-// router.get("/leaderboard", getLeaderboard);
-
-// export default router;
 
 
 import { Router } from "express";

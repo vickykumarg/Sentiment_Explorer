@@ -1,62 +1,9 @@
-// import Score from "../models/Score.js";
-// import { simpleSentiment, SAMPLE_SENTENCES } from "../utils/sentiment.js";
 
-// let memoryScores = []; // fallback storage if no DB
-
-// export async function analyzeSentiment(req, res) {
-//   const { text } = req.body || {};
-//   const result = simpleSentiment(text || "");
-//   return res.json({ ok: true, result });
-// }
-
-// // export async function getSentences(req, res) {
-// //   return res.json({ ok: true, data: SAMPLE_SENTENCES });
-// // }
-
-// export async function getSentences(req, res) {
-//   try {
-//     // later you’ll fetch from DB, but for now SAMPLE_SENTENCES
-//     res.json(SAMPLE_SENTENCES);  // 👈 return array directly
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// }
-
-// export async function saveScore(req, res) {
-//   const { name, correct, total } = req.body || {};
-//   if (!name || correct == null || total == null) {
-//     return res.status(400).json({ ok: false, error: "Missing fields" });
-//   }
-//   try {
-//     if (Score.db.readyState === 1) {
-//       const doc = await Score.create({ name, correct, total });
-//       return res.json({ ok: true, data: doc });
-//     }
-//   } catch (e) {
-//     console.warn("[saveScore] DB write failed, using memory:", e.message);
-//   }
-//   const doc = { _id: String(Date.now()), name, correct, total, createdAt: new Date() };
-//   memoryScores.push(doc);
-//   return res.json({ ok: true, data: doc, memory: true });
-// }
-
-// export async function getLeaderboard(req, res) {
-//   try {
-//     if (Score.db.readyState === 1) {
-//       const top = await Score.find().sort({ correct: -1, createdAt: 1 }).limit(10);
-//       return res.json({ ok: true, data: top });
-//     }
-//   } catch (e) {
-//     console.warn("[getLeaderboard] DB read failed, using memory:", e.message);
-//   }
-//   const top = memoryScores.sort((a,b)=> b.correct - a.correct).slice(0,10);
-//   return res.json({ ok: true, data: top, memory: true });
-// }
 
 
 import Score from "../models/Score.js";
 import Sentence from "../models/Sentence.js";
-import { simpleSentiment, SAMPLE_SENTENCES } from "../utils/sentiment.js";
+// import { simpleSentiment, SAMPLE_SENTENCES } from "../utils/sentiment.js";
 
 let memoryScores = []; // fallback storage if no DB
 
@@ -67,15 +14,7 @@ export async function analyzeSentiment(req, res) {
   return res.json({ ok: true, result });
 }
 
-// -------- Example Sentences --------
-// export async function getSentences(req, res) {
-//   try {
-//     // later you’ll fetch from DB, but for now SAMPLE_SENTENCES
-//     res.json(SAMPLE_SENTENCES);  // 👈 return array directly
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// }
+
 
 export async function getSentences(req, res) {
   try {
@@ -83,8 +22,7 @@ export async function getSentences(req, res) {
       const docs = await Sentence.find().sort({ createdAt: -1 });
       return res.json(docs);
     }
-    // fallback if DB not connected
-    return res.json(SAMPLE_SENTENCES);
+    
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

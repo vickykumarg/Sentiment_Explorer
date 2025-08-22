@@ -8,6 +8,7 @@ import analyzeRoutes from "./src/routes/analyze.js";
 import scoreRoutes from "./src/routes/score.js";
 
 dotenv.config();
+console.log("HF API Key:", process.env.HF_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 5000;

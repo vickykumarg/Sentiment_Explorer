@@ -1,87 +1,7 @@
-// import express from "express";
-// import Sentence from "../models/Sentence.js";
-
-// const router = express.Router();
-
-// // Save new sentence from Practice
-// router.post("/sentences", async (req, res) => {
-//   try {
-//     const { text, label } = req.body;
-//     const sentence = new Sentence({ text, label });
-//     await sentence.save();
-//     res.json(sentence);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
-
-// // Fetch sentences for Quiz (max 20 at a time, ordered by createdAt)
-// router.get("/sentences", async (req, res) => {
-//   try {
-//     const sentences = await Sentence.find().sort({ createdAt: -1 }).limit(20);
-//     res.json(sentences);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
-
-// export default router;
 
 
-// backend/routes/api.js
-// import express from "express";
-// import Sentence from "../models/Sentence.js";
-// import Sentiment from "sentiment"; // 👈 npm install sentiment
-
-// const router = express.Router();
-// const sentiment = new Sentiment();
-
-// // Analyze sentence
-// router.post("/analyze", async (req, res) => {
-//   try {
-//     const { text } = req.body;
-//     const result = sentiment.analyze(text);
-
-//     // Simple label based on score
-//     let label = "neutral";
-//     if (result.score > 0) label = "positive";
-//     else if (result.score < 0) label = "negative";
-
-//     res.json({
-//       label,
-//       score: Math.abs(result.score) / 5 // normalize a bit
-//     });
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
-
-// // Save new sentence
-// router.post("/sentences", async (req, res) => {
-//   try {
-//     const { text, label } = req.body;
-//     const sentence = new Sentence({ text, label });
-//     await sentence.save();
-//     res.json(sentence);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
-
-// // Fetch sentences (max 20 latest)
-// router.get("/sentences", async (req, res) => {
-//   try {
-//     const sentences = await Sentence.find().sort({ createdAt: -1 }).limit(20);
-//     res.json(sentences);
-//   } catch (err) {
-//     res.status(500).json({ error: err.message });
-//   }
-// });
-
-// export default router;
 
 
-// backend/routes/exercise.js
 import express from "express";
 import Sentiment from "sentiment";
 import Sentence from "../models/Sentence.js";
@@ -90,7 +10,7 @@ import Score from "../models/Score.js";
 const router = express.Router();
 const sentiment = new Sentiment();
 
-let memoryScores = []; // fallback if DB not available
+let memoryScores = []; 
 
 // ---------- Analyze Sentiment ----------
 router.post("/analyze", async (req, res) => {

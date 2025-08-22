@@ -1,36 +1,4 @@
-// import React from "react";
 
-// export default function Learn() {
-//   return (
-//     <section className="max-w-3xl mx-auto px-4 py-10 space-y-6">
-//       <h2 className="text-2xl md:text-4xl font-black">What is Sentiment Analysis?</h2>
-//       <div className="card space-y-3">
-//         <p>
-//           Sentiment Analysis is a simple trick in Artificial Intelligence that guesses if a sentence
-//           sounds <b>positive</b>, <b>negative</b>, or <b>neutral</b>.
-//         </p>
-//         <ul className="list-disc pl-6">
-//           <li>“I love ice cream!” → Positive 😊</li>
-//           <li>“This homework is so hard.” → Negative 😞</li>
-//           <li>“I am going to school.” → Neutral 🙂</li>
-//         </ul>
-//         <p>
-//           Apps use this to understand feelings in reviews and comments.
-//         </p>
-//       </div>
-
-//       <div className="card space-y-3">
-//         <h3 className="text-xl font-bold">Mini Story</h3>
-//         <p>
-//           Maya found a new park. She said, “This park is awesome and fun!”<br/>
-//           Later, her kite broke and she said, “Oh no, I feel sad.”<br/>
-//           Finally, she looked at the blue sky and smiled. “The sky is blue.”<br/>
-//           Can you spot which sentences are positive, negative, and neutral?
-//         </p>
-//       </div>
-//     </section>
-//   )
-// }
 
 
 

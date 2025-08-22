@@ -27,9 +27,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* <p className="text-xs sm:text-sm text-gray-500">
-          Fully responsive — works great on phones and laptops.
-        </p> */}
+        
       </div>
 
       {/* Right Card */}
